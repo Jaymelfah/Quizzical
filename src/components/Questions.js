@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState, useEffect } from 'react';
@@ -23,7 +24,7 @@ const Questions = (props) => {
   const [randomNumberArray4, set4] = useState(randomNumber);
   const [randomNumberArray5, set5] = useState(randomNumber);
 
-  const { data, handleClick } = props;
+  const { data, handleClick, addtoRefs1 } = props;
 
   useEffect(() => {
     set1(randomNumber());
@@ -53,37 +54,37 @@ const Questions = (props) => {
       <div className="questions">
         <p className="question">{data[0].question}</p>
         <ul className="possible-answers flex">
-          <li id="1" onClick={handleClick}>{questionOneAnswers[randomNumberArray1[0]]}</li>
-          <li id="2" onClick={handleClick}>{questionOneAnswers[randomNumberArray1[1]]}</li>
-          <li onClick={handleClick}>{questionOneAnswers[randomNumberArray1[2]]}</li>
-          <li onClick={handleClick}>{questionOneAnswers[randomNumberArray1[3]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionOneAnswers[randomNumberArray1[0]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionOneAnswers[randomNumberArray1[1]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionOneAnswers[randomNumberArray1[2]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionOneAnswers[randomNumberArray1[3]]}</li>
         </ul>
       </div>
       <div className="questions flex">
         <p className="question">{data[1].question}</p>
         <ul className="possible-answers flex">
-          <li onClick={handleClick}>{questionTwoAnswers[randomNumberArray2[0]]}</li>
-          <li onClick={handleClick}>{questionTwoAnswers[randomNumberArray2[1]]}</li>
-          <li onClick={handleClick}>{questionTwoAnswers[randomNumberArray2[2]]}</li>
-          <li onClick={handleClick}>{questionTwoAnswers[randomNumberArray2[3]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionTwoAnswers[randomNumberArray2[0]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionTwoAnswers[randomNumberArray2[1]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionTwoAnswers[randomNumberArray2[2]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionTwoAnswers[randomNumberArray2[3]]}</li>
         </ul>
       </div>
       <div className="questions flex">
         <p className="question">{data[2].question}</p>
         <ul className="possible-answers flex">
-          <li onClick={handleClick}>
+          <li ref={addtoRefs1} onClick={handleClick}>
             {questionThreeAnswers[randomNumberArray3[0]]}
 
           </li>
-          <li onClick={handleClick}>
+          <li ref={addtoRefs1} onClick={handleClick}>
             {questionThreeAnswers[randomNumberArray3[1]]}
 
           </li>
-          <li onClick={handleClick}>
+          <li ref={addtoRefs1} onClick={handleClick}>
             {questionThreeAnswers[randomNumberArray3[2]]}
 
           </li>
-          <li onClick={handleClick}>
+          <li ref={addtoRefs1} onClick={handleClick}>
             {questionThreeAnswers[randomNumberArray3[3]]}
 
           </li>
@@ -92,19 +93,19 @@ const Questions = (props) => {
       <div className="questions flex">
         <p className="question">{data[3].question}</p>
         <ul className="possible-answers flex">
-          <li onClick={handleClick}>{questionFourAnswers[randomNumberArray4[0]]}</li>
-          <li onClick={handleClick}>{questionFourAnswers[randomNumberArray4[1]]}</li>
-          <li onClick={handleClick}>{questionFourAnswers[randomNumberArray4[2]]}</li>
-          <li onClick={handleClick}>{questionFourAnswers[randomNumberArray4[3]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionFourAnswers[randomNumberArray4[0]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionFourAnswers[randomNumberArray4[1]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionFourAnswers[randomNumberArray4[2]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionFourAnswers[randomNumberArray4[3]]}</li>
         </ul>
       </div>
       <div className="questions flex">
         <p className="question">{data[4].question}</p>
         <ul className="possible-answers flex">
-          <li onClick={handleClick}>{questionFiveAnswers[randomNumberArray5[0]]}</li>
-          <li onClick={handleClick}>{questionFiveAnswers[randomNumberArray5[1]]}</li>
-          <li onClick={handleClick}>{questionFiveAnswers[randomNumberArray5[2]]}</li>
-          <li onClick={handleClick}>{questionFiveAnswers[randomNumberArray5[3]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionFiveAnswers[randomNumberArray5[0]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionFiveAnswers[randomNumberArray5[1]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionFiveAnswers[randomNumberArray5[2]]}</li>
+          <li ref={addtoRefs1} onClick={handleClick}>{questionFiveAnswers[randomNumberArray5[3]]}</li>
         </ul>
       </div>
 
