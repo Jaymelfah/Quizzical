@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React, { useState, useEffect, useRef } from 'react';
 import Quiz from './components/Quiz';
 import StartQuiz from './components/StartQuiz';
@@ -17,15 +18,15 @@ function App() {
   const checkAnswers = () => {
     questionAnswers1.current.forEach((item) => {
       if (item.innerHTML === questionData.results[0].correct_answer) {
-        item.classList.add('correct-answer');
+        item.style.backgroundColor = '#94d7a2';
       } else if (item.innerHTML === questionData.results[1].correct_answer) {
-        item.classList.add('correct-answer');
+        item.style.backgroundColor = '#94d7a2';
       } else if (item.innerHTML === questionData.results[2].correct_answer) {
-        item.classList.add('correct-answer');
+        item.style.backgroundColor = '#94d7a2';
       } else if (item.innerHTML === questionData.results[3].correct_answer) {
-        item.classList.add('correct-answer');
+        item.style.backgroundColor = '#94d7a2';
       } else if (item.innerHTML === questionData.results[4].correct_answer) {
-        item.classList.add('correct-answer');
+        item.style.backgroundColor = '#94d7a2';
       }
     });
   };
