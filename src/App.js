@@ -6,6 +6,8 @@ import StartQuiz from './components/StartQuiz';
 function App() {
   const [render, setRender] = useState(false);
   const [questionData, setQuestionData] = useState({});
+  const [countCheck, setCountCheck] = useState(false);
+  const [count, setCount] = useState(0);
   const questionAnswers1 = useRef([]);
   questionAnswers1.current = [];
 
@@ -13,6 +15,24 @@ function App() {
     if (el && !questionAnswers1.current.includes(el)) {
       questionAnswers1.current.push(el);
     }
+  };
+
+  const verification = () => {
+    const correctArray = [questionData.results[0].correct_answer,
+      questionData.results[1].correct_answer,
+      questionData.results[2].correct_answer, questionData.results[3].correct_answer,
+      questionData.results[4].correct_answer];
+    let increment = 0;
+    for (let i = 0; i < questionAnswers1.current.length; i += 1) {
+      if (questionAnswers1.current[i].id === '1') {
+        if (!correctArray.includes(questionAnswers1.current[i].innerHTML)) {
+          questionAnswers1.current[i].style.backgroundColor = '#f8bcbc';
+          increment += 1;
+        }
+      }
+    }
+    setCount(increment);
+    setCountCheck(true);
   };
 
   const checkAnswers = () => {
@@ -29,6 +49,7 @@ function App() {
         item.style.backgroundColor = '#94d7a2';
       }
     });
+    verification();
   };
 
   const handleClick = (e) => {
@@ -61,9 +82,16 @@ function App() {
           handleClick={handleClick}
           addtoRefs1={addtoRefs1}
           checkAnswers={checkAnswers}
+          countCheck={countCheck}
+          count={count}
+          reload={() => window.location.reload()}
         />
       )
-        : <StartQuiz pageRender={pageRender} />}
+        : (
+          <StartQuiz
+            pageRender={pageRender}
+          />
+        )}
     </div>
   );
 }

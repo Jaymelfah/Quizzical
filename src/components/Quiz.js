@@ -5,6 +5,7 @@ import Questions from './Questions';
 const Quiz = (props) => {
   const {
     questionData, handleClick, state, addtoRefs1, checkAnswers,
+    count, countCheck, reload,
   } = props;
 
   return (
@@ -15,7 +16,22 @@ const Quiz = (props) => {
         data={questionData.results}
         addtoRefs1={addtoRefs1}
       />
-      <button onClick={checkAnswers} type="button" className="start-quiz-btn">Check Answers</button>
+      {countCheck
+        ? (
+          <>
+            <p>
+              You have scored
+              {' '}
+              {5 - count}
+              {' '}
+              / 5 correct answers
+            </p>
+            <button onClick={reload} type="button" className="start-quiz-btn">Play Again</button>
+
+          </>
+        )
+        : <button onClick={checkAnswers} type="button" className="start-quiz-btn">Check Answers</button>}
+
     </div>
   );
 };
