@@ -14,6 +14,22 @@ function App() {
     }
   };
 
+  const checkAnswers = () => {
+    questionAnswers1.current.forEach((item) => {
+      if (item.innerHTML === questionData.results[0].correct_answer) {
+        item.classList.add('correct-answer');
+      } else if (item.innerHTML === questionData.results[1].correct_answer) {
+        item.classList.add('correct-answer');
+      } else if (item.innerHTML === questionData.results[2].correct_answer) {
+        item.classList.add('correct-answer');
+      } else if (item.innerHTML === questionData.results[3].correct_answer) {
+        item.classList.add('correct-answer');
+      } else if (item.innerHTML === questionData.results[4].correct_answer) {
+        item.classList.add('correct-answer');
+      }
+    });
+  };
+
   const handleClick = (e) => {
     e.target.classList.toggle('select');
     if (e.target.classList.contains('select')) {
@@ -43,6 +59,7 @@ function App() {
           questionData={questionData}
           handleClick={handleClick}
           addtoRefs1={addtoRefs1}
+          checkAnswers={checkAnswers}
         />
       )
         : <StartQuiz pageRender={pageRender} />}

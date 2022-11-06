@@ -4,7 +4,7 @@ import Questions from './Questions';
 
 const Quiz = (props) => {
   const {
-    questionData, handleClick, state, addtoRefs1,
+    questionData, handleClick, state, addtoRefs1, checkAnswers,
   } = props;
 
   return (
@@ -15,7 +15,7 @@ const Quiz = (props) => {
         data={questionData.results}
         addtoRefs1={addtoRefs1}
       />
-      <button type="button" className="start-quiz-btn">Check Answers</button>
+      <button onClick={checkAnswers} type="button" className="start-quiz-btn">Check Answers</button>
     </div>
   );
 };
